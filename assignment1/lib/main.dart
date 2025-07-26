@@ -1,9 +1,16 @@
+import 'package:assignment1/onboarding/Onboarding3.dart';
+import 'package:assignment1/onboarding/Onboarding4.dart';
 import 'package:flutter/material.dart';
 import 'onboarding/MyHome.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'onboarding/Onboarding1.dart';
-
+import 'onboarding/Onboarding2.dart';
+//import 'package:flutter/rendering.dart';
+import 'package:flutter/material.dart';
+import 'onboarding/custom_avatar_curve.dart';
+import 'onboarding/Apppbar.dart';
 void main() {
+  //debugPaintSizeEnabled = true;
   runApp(const MyApp());
 }
 
@@ -20,11 +27,11 @@ class MyApp extends StatelessWidget {
         scaffoldBackgroundColor: Color(0xFF121212), // Dark background
         colorScheme: ColorScheme.fromSeed(
           seedColor: vibrantGold,
-          brightness: Brightness.dark,
+           brightness: Brightness.dark,
         ),
 
         // 💡 Apply gold text color globally
-        textTheme: GoogleFonts.poppinsTextTheme(
+        textTheme: GoogleFonts.montserratTextTheme(
           ThemeData.dark().textTheme,
         ).apply(
           bodyColor: vibrantGold,
@@ -38,7 +45,8 @@ class MyApp extends StatelessWidget {
         ),
       ),
       debugShowCheckedModeBanner: false,
-      home: Onboarding1(),
+      home: MyHomePage(title: "Habits"),
+
     );
   }
 }

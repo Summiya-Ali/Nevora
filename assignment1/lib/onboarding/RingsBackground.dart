@@ -6,11 +6,11 @@ class RingsBackground extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      // Neon blue
       body: Center(
       child: Stack(
       alignment: Alignment.center,
       children: [
+        //outermost ring
         Container(
           width: 425,
           height: 425,
