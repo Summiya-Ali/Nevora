@@ -1,14 +1,22 @@
+import 'package:assignment1/Main_app/HomeBar.dart';
 import 'package:assignment1/onboarding/Onboarding3.dart';
 import 'package:assignment1/onboarding/Onboarding4.dart';
 import 'package:flutter/material.dart';
 import 'onboarding/MyHome.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'onboarding/Onboarding1.dart';
-import 'onboarding/Onboarding2.dart';
+
 //import 'package:flutter/rendering.dart';
 import 'package:flutter/material.dart';
 import 'onboarding/custom_avatar_curve.dart';
 import 'onboarding/Apppbar.dart';
+import 'Create_account/Create1.dart';
+import 'Create_account/Create2.dart';
+import 'Create_account/Create3.dart';
+
+import "Main_app/HomeBar.dart";
+import "Main_app/Screen1.dart";
+import 'Main_app/HabChal.dart';
+import 'Main_app/Screen2.dart';
 void main() {
   //debugPaintSizeEnabled = true;
   runApp(const MyApp());
@@ -45,7 +53,8 @@ class MyApp extends StatelessWidget {
         ),
       ),
       debugShowCheckedModeBanner: false,
-      home: MyHomePage(title: "Habits"),
+    //  home: MyHomePage(title: "Habits"),
+home: Screen2(),
 
     );
   }

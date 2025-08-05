@@ -34,7 +34,7 @@ dependencies:
   material_design_icons_flutter: ^7.0.7296
   hexagon: ^0.2.0
   flutter_custom_clippers: ^2.1.0
-
+  intl: ^0.18.1
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.
   cupertino_icons: ^1.0.8

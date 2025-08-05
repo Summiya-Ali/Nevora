@@ -1,16 +1,16 @@
 import 'package:flutter/material.dart';
-import 'Apppbar.dart';
-import 'Onboarding3.dart'; // 👈 import these two
-import '../Create_account/Create1.dart';
-
-class Onboarding4 extends StatefulWidget {
-  const Onboarding4({super.key});
+import '../onboarding/Apppbar.dart';
+import '../onboarding/Onboarding4.dart';
+import 'Create2.dart';
+class Create1 extends StatefulWidget {
+  const Create1({super.key});
 
   @override
-  State<Onboarding4> createState() => _Onboarding4State();
+  State<Create1> createState() => _Create1State();
 }
 
-class _Onboarding4State extends State<Onboarding4> {
+
+class _Create1State extends State<Create1> {
   final TextEditingController emailController = TextEditingController();
   final TextEditingController passwordController = TextEditingController();
 
@@ -20,10 +20,10 @@ class _Onboarding4State extends State<Onboarding4> {
     passwordController.dispose();
     super.dispose();
   }
-
   @override
   Widget build(BuildContext context) {
     return SafeArea(
+
       child: GestureDetector(
         onHorizontalDragEnd: (details) {
           if (details.primaryVelocity != null) {
@@ -31,18 +31,19 @@ class _Onboarding4State extends State<Onboarding4> {
               // Swipe Right → Go back to Onboarding3
               Navigator.push(
                 context,
-                MaterialPageRoute(builder: (context) => const Onboarding3()),
+                MaterialPageRoute(builder: (context) => const Onboarding4()),
               );
             } else if (details.primaryVelocity! < 0) {
               // Swipe Left → Go forward to Create1
               Navigator.push(
                 context,
-                MaterialPageRoute(builder: (context) => const Create1()),
+                MaterialPageRoute(builder: (context) => const Create2()),
               );
             }
           }
         },
         child: Scaffold(
+          //  backgroundColor: Colors.white,
           appBar: CustomAppBar(
             title: "Create Account",
             onBack: () => Navigator.pop(context),
@@ -53,14 +54,14 @@ class _Onboarding4State extends State<Onboarding4> {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 const Text(
-                  "Email",
+                  "Name",
                   style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
                 ),
                 const SizedBox(height: 6),
                 TextField(
                   controller: emailController,
                   decoration: InputDecoration(
-                    hintText: "Enter your email",
+                    hintText: "Enter your name",
                     suffixIcon: emailController.text.isNotEmpty
                         ? GestureDetector(
                       onTap: () {
@@ -73,10 +74,12 @@ class _Onboarding4State extends State<Onboarding4> {
                           color: Colors.white,
                           shape: BoxShape.circle,
                         ),
-                        child: const Icon(Icons.close, size: 22, color: Colors.black),
+                        child: const Icon(Icons.close, size: 22,color: Colors.black),
                       ),
                     )
                         : null,
+
+
                     enabledBorder: const UnderlineInputBorder(
                       borderSide: BorderSide(color: Colors.grey),
                     ),
@@ -85,19 +88,20 @@ class _Onboarding4State extends State<Onboarding4> {
                     ),
                   ),
                   keyboardType: TextInputType.emailAddress,
-                  onChanged: (_) => setState(() {}),
+                  onChanged: (_) => setState(() {}), // Refresh suffix icon
                 ),
+
                 const SizedBox(height: 24),
                 const Text(
-                  "Password",
+                  "Surname",
                   style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
                 ),
                 const SizedBox(height: 6),
                 TextField(
                   controller: passwordController,
-                  obscureText: true,
+
                   decoration: InputDecoration(
-                    hintText: "Enter your password",
+                    hintText: "Enter your surname",
                     suffixIcon: passwordController.text.isNotEmpty
                         ? GestureDetector(
                       onTap: () => setState(() => passwordController.clear()),
@@ -107,7 +111,7 @@ class _Onboarding4State extends State<Onboarding4> {
                           shape: BoxShape.circle,
                           color: Colors.grey.shade300,
                         ),
-                        child: const Icon(Icons.close, size: 22, color: Colors.black),
+                        child: const Icon(Icons.close, size: 22,color: Colors.black),
                       ),
                     )
                         : null,
@@ -120,19 +124,50 @@ class _Onboarding4State extends State<Onboarding4> {
                   ),
                   onChanged: (_) => setState(() {}),
                 ),
+
                 const SizedBox(height: 12),
-                TextButton(
-                  onPressed: () {},
-                  style: TextButton.styleFrom(padding: EdgeInsets.zero),
-                  child: const Text("I forgot my password"),
+
+                // Align to left
+
+                const Text(
+                  "BirthDate",
+                  style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
                 ),
-                const Spacer(),
-                Center(
-                  child: Text(
-                    "Don't have an account? Let's create one!",
-                    style: TextStyle(color: Colors.grey.shade700),
+                const SizedBox(height: 6),
+                TextField(
+                  controller: emailController,
+                  decoration: InputDecoration(
+                    hintText: "mm/dd/yyy",
+                    suffixIcon: emailController.text.isNotEmpty
+                        ? GestureDetector(
+                      onTap: () {
+                        emailController.clear();
+                        setState(() {});
+                      },
+                      child: Container(
+                        margin: const EdgeInsets.symmetric(vertical: 10, horizontal: 12),
+                        decoration: const BoxDecoration(
+                          color: Colors.white,
+                          shape: BoxShape.circle,
+                        ),
+                        child: const Icon(Icons.close, size: 22,color: Colors.black),
+                      ),
+                    )
+                        : null,
+
+
+                    enabledBorder: const UnderlineInputBorder(
+                      borderSide: BorderSide(color: Colors.grey),
+                    ),
+                    focusedBorder: const UnderlineInputBorder(
+                      borderSide: BorderSide(color: Color(0xFFEDC967)),
+                    ),
                   ),
+                  keyboardType: TextInputType.datetime,
+                  onChanged: (_) => setState(() {}), // Refresh suffix icon
                 ),
+                const SizedBox(height: 12),
+                const Spacer(),
                 const SizedBox(height: 12),
                 SizedBox(
                   width: double.infinity,
@@ -153,6 +188,23 @@ class _Onboarding4State extends State<Onboarding4> {
               ],
             ),
           ),
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
         ),
       ),
     );
