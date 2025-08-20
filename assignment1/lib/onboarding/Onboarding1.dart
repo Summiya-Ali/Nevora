@@ -2,6 +2,9 @@ import 'package:flutter/material.dart';
 import 'RingsBackground.dart';
 import 'Onboarding2.dart';
 import 'Polygon.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:flutter_svg/flutter_svg.dart';
+
 class Onboarding1 extends StatefulWidget {
   @override
   _Onboarding1State createState() => _Onboarding1State();
@@ -52,27 +55,24 @@ class _Onboarding1State extends State<Onboarding1> {
                             child: const CircleAvatar(
                               radius: 60,
                               backgroundImage: NetworkImage(
-                                'https://plus.unsplash.com/premium_photo-1671656349322-41de944d259b?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+                                'https://images.unsplash.com/photo-1754264546104-1e3e781d1104?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHx0b3BpYy1mZWVkfDc1fHRvd0paRnNrcEdnfHxlbnwwfHx8fHw%3D',
                               ),
                             ),
                           ),
                         ),
 
                         Positioned(
-                          top: 35,
-                          left: 284,
-                          child: CircleAvatar(
-                            radius: 25,
-                            backgroundImage: NetworkImage(
-                              'https://images.unsplash.com/photo-1694878981888-7a526050b455?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+                          top: 27,
+                          left: 290,
 
-                            ),
-                          ),
+                          child: Image.asset("assets/images/transp.png", width: 70, height: 70,)
+
+
                         ),
 
                         Positioned(
                           top: 220,
-                          right: 50,
+                          right: 60,
                           child: Container(
                             decoration: BoxDecoration(
                               shape: BoxShape.circle,
@@ -87,22 +87,16 @@ class _Onboarding1State extends State<Onboarding1> {
                             child: const CircleAvatar(
                               radius: 50,
                               backgroundImage: NetworkImage(
-                                'https://images.unsplash.com/photo-1667857481427-382ee0b5207e?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1yZWxhdGVkfDN8fHxlbnwwfHx8fHw%3D',
+                                'https://images.unsplash.com/photo-1754051486494-cfdbf29a589c?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
                               ),
                             ),
                           ),
                         ),
 
                         Positioned(
-                          top: 200,
-                          right: 40,
-                          child: CircleAvatar(
-                            radius: 22,
-                            backgroundImage: NetworkImage(
-                              'https://images.unsplash.com/photo-1694878981888-7a526050b455?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
-
-                            ),
-                          ),
+                          top: 210,
+                          right: 18,
+                         child: Image.asset("assets/images/transp.png", width: 60, height: 60,)
                         ),
 
                         // 3rd Circular Placeholder
@@ -123,21 +117,16 @@ class _Onboarding1State extends State<Onboarding1> {
                             child: const CircleAvatar(
                               radius: 45,
                               backgroundImage: NetworkImage(
-                                'https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+                                'https://plus.unsplash.com/premium_photo-1698952127555-29c7b5118ce6?q=80&w=686&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
                               ),
                             ),
                           ),
                         ),
 
                         Positioned(
-                          bottom: 89,
-                          left: 180,
-                          child: CircleAvatar(
-                            radius: 18,
-                            backgroundImage: NetworkImage(
-                              'https://images.unsplash.com/photo-1694878981888-7a526050b455?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
-                            ),
-                          ),
+                          bottom: 77,
+                          left: 187,
+                            child: Image.asset("assets/images/transp.png", width: 60, height: 60,)
                         ),
                       ],
                     ),

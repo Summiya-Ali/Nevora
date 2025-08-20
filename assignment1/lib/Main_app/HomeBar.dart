@@ -27,9 +27,8 @@ class HomeBarState extends State<HomeBar> {
 
   Widget Homebar() {
     return Container(
-
       decoration: BoxDecoration(
-
+        color: Colors.white, // 👈 Background color here
         border: Border(
           bottom: BorderSide(
             color: Colors.grey.shade700,
@@ -37,6 +36,8 @@ class HomeBarState extends State<HomeBar> {
           ),
         ),
       ),
+
+
       padding: const EdgeInsets.only(top: 16, left: 16, right: 16),
       child: Column(
         children: [
@@ -47,30 +48,30 @@ class HomeBarState extends State<HomeBar> {
               //calendar button
               OutlinedButton(
                   style: OutlinedButton.styleFrom(
-                    backgroundColor: Colors.white24,
+                    backgroundColor: Colors.white,
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(8),
-                      side: BorderSide(color: Colors.grey),
+                      side: BorderSide(color: Colors.black),
                     ),
                     padding: EdgeInsets.zero, // 👈 remove internal padding
                     minimumSize: Size(48, 48),
 
                   ),
                   onPressed: () {},
-                  child: Icon(Icons.calendar_month)),
+                  child: Icon(Icons.calendar_month, color: Colors.black,)),
               // bell button
               OutlinedButton(
                   style: OutlinedButton.styleFrom(
-                    backgroundColor: Colors.white24,
+                    backgroundColor: Colors.white,
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(8),
-                      side: BorderSide(color: Colors.grey),
+                      side: BorderSide(color: Colors.black),
                     ),
                     padding: EdgeInsets.zero, // 👈 remove internal padding
                     minimumSize: Size(48, 48),
                   ),
                   onPressed: () {},
-                  child: Icon(Icons.notifications)
+                  child: Icon(Icons.notifications, color: Colors.black,)
               ),
             ],),
 
@@ -89,7 +90,8 @@ class HomeBarState extends State<HomeBar> {
                       style: TextStyle(
                         fontSize: 25,
                         fontWeight: FontWeight.bold,
-                        //  color: Colors.white,
+
+                         color: Colors.black,
                       )
                   ),
                   SizedBox(height: 5),
@@ -97,7 +99,7 @@ class HomeBarState extends State<HomeBar> {
                   Text("Lets make habits together",
                       style: TextStyle(
                         fontSize: 12,
-                        //  color: Colors.white,
+                          color: Colors.black,
                       )
                   ),
                 ],
@@ -143,7 +145,7 @@ class HomeBarState extends State<HomeBar> {
                 },
                 child: Container(
                   decoration: BoxDecoration(
-                    color: _isTodaySelected ? Color(0xFFEDC967) : Colors.transparent,
+                    color: _isTodaySelected ? Colors.black : Colors.transparent,
                     borderRadius: BorderRadius.circular(20),
                   ),
                   padding: EdgeInsets.symmetric(vertical: 4),
@@ -151,7 +153,7 @@ class HomeBarState extends State<HomeBar> {
                     child: Text(
                       'Today',
                       style: TextStyle(
-                        color: _isTodaySelected ? Colors.black : Colors.grey[700],
+                        color: _isTodaySelected ? Colors.white : Colors.grey[700],
                         fontWeight: _isTodaySelected ? FontWeight.bold : FontWeight.normal,
                       ),
                     ),
@@ -168,7 +170,7 @@ class HomeBarState extends State<HomeBar> {
                 },
                 child: Container(
                   decoration: BoxDecoration(
-                    color: !_isTodaySelected ? Color(0xFFEDC967) : Colors.transparent,
+                    color: !_isTodaySelected ? Colors.black : Colors.transparent,
                     borderRadius: BorderRadius.circular(20),
                   ),
                   padding: EdgeInsets.symmetric(vertical: 4),
@@ -179,7 +181,7 @@ class HomeBarState extends State<HomeBar> {
                         Text(
                           'Clubs',
                           style: TextStyle(
-                            color: !_isTodaySelected ? Colors.black : Colors.grey[700],
+                            color: !_isTodaySelected ? Colors.white : Colors.grey[700],
                             fontWeight: !_isTodaySelected ? FontWeight.bold : FontWeight.normal,
                           ),
                         ),
@@ -268,7 +270,7 @@ class _DateSelectorState extends State<DateSelector> {
         margin: EdgeInsets.symmetric(horizontal: 6),
         padding: EdgeInsets.symmetric(vertical: 10, horizontal: 12),
         decoration: BoxDecoration(
-          color: isSelected ? Colors.black12 : Colors.white,
+          color: isSelected ? Colors.black12 :   Colors.white38,
           borderRadius: BorderRadius.circular(12),
           border: Border.all(color: Colors.grey),
         ),
@@ -279,11 +281,13 @@ class _DateSelectorState extends State<DateSelector> {
                 style: TextStyle(
                   fontWeight: FontWeight.bold,
                   fontSize: 16,
+                  color: Colors.white.withOpacity(0.6),
                 )),
             SizedBox(height: 4),
             Text(item.day,
                 style: TextStyle(
                   fontSize: 12,
+                  color: Colors.yellow.withOpacity(0.9),
                 )),
           ],
         ),

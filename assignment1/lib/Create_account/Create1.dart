@@ -1,7 +1,9 @@
+import 'package:assignment1/onboarding/RingsBackground.dart';
 import 'package:flutter/material.dart';
 import '../onboarding/Apppbar.dart';
 import '../onboarding/Onboarding4.dart';
 import 'Create2.dart';
+import '../onboarding/RingsBackground.dart';
 class Create1 extends StatefulWidget {
   const Create1({super.key});
 
@@ -24,33 +26,23 @@ class _Create1State extends State<Create1> {
   Widget build(BuildContext context) {
     return SafeArea(
 
-      child: GestureDetector(
-        onHorizontalDragEnd: (details) {
-          if (details.primaryVelocity != null) {
-            if (details.primaryVelocity! > 0) {
-              // Swipe Right → Go back to Onboarding3
-              Navigator.push(
-                context,
-                MaterialPageRoute(builder: (context) => const Onboarding4()),
-              );
-            } else if (details.primaryVelocity! < 0) {
-              // Swipe Left → Go forward to Create1
-              Navigator.push(
-                context,
-                MaterialPageRoute(builder: (context) => const Create2()),
-              );
-            }
-          }
-        },
-        child: Scaffold(
-          //  backgroundColor: Colors.white,
-          appBar: CustomAppBar(
-            title: "Create Account",
-            onBack: () => Navigator.pop(context),
+      child: Scaffold(
+        backgroundColor: Colors.transparent,
+        //  backgroundColor: Colors.white,
+        appBar: CustomAppBar(
+          title: "Create Account",
+          onBack: () => Navigator.pop(context),
+        ),
+          body: Stack(
+              children: [
+          const Positioned.fill(
+              child: RingsBackground()
           ),
-          body: Padding(
-            padding: const EdgeInsets.all(24.0),
-            child: Column(
+
+      Padding(
+        padding: const EdgeInsets.all(24.0),
+              child:
+              Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 const Text(
@@ -172,7 +164,15 @@ class _Create1State extends State<Create1> {
                 SizedBox(
                   width: double.infinity,
                   child: ElevatedButton(
-                    onPressed: () {},
+                    onPressed: () {
+
+                      // Swipe Left → Go forward to Create1
+                      Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => const Create2()),
+                      );
+
+                    },
                     style: ElevatedButton.styleFrom(
                       padding: const EdgeInsets.symmetric(vertical: 16),
                       shape: RoundedRectangleBorder(
@@ -186,27 +186,28 @@ class _Create1State extends State<Create1> {
                   ),
                 ),
               ],
-            ),
-          ),
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-        ),
+                          ),
       ),
+          ],
+          ),
+        )
     );
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
   }
 }

@@ -35,6 +35,8 @@ class _CardsState extends State<Cards> {
           onExit: (_) => setState(() => isHoveringList[index] = false),
           child: Card(
             elevation: 2,
+
+            color: Colors.white30,
             shape: RoundedRectangleBorder(
               side: BorderSide(
                 color: isHoveringList[index] ? Colors.amber : Colors.grey,

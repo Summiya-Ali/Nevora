@@ -1,7 +1,10 @@
+import 'package:assignment1/onboarding/RingsBackground.dart';
 import 'package:flutter/material.dart';
 import '../onboarding/Apppbar.dart';
 import 'Cards.dart';
 import 'Create2.dart';
+import '../Main_app/Screen1.dart';
+import '../onboarding/RingsBackground.dart';
 
 class Create3 extends StatefulWidget {
   const Create3({super.key});
@@ -26,7 +29,7 @@ class _Create3State extends State<Create3> {
             // Swipe Left → Go forward to Create1
             Navigator.push(
               context,
-              MaterialPageRoute(builder: (context) => const Placeholder()),
+              MaterialPageRoute(builder: (context) => const Screen1()),
             );
           }
         }
@@ -37,42 +40,55 @@ class _Create3State extends State<Create3> {
           title: "Create Account",
           onBack: () => Navigator.pop(context),
         ),
-        body: Column(
+        body: Stack(
+
           children: [
-            SizedBox(height: 10),
-            Padding(
-              padding: const EdgeInsets.all(10.0),
-              child: Align(
-                alignment: Alignment.centerLeft,
+            const RingsBackground(),
+            Column(
+            children: [
+              SizedBox(height: 10),
+              Padding(
+                padding: const EdgeInsets.all(10.0),
+                child: Align(
+                  alignment: Alignment.centerLeft,
 
-                child: Text(
-                  "Choose habits",
-                  style: TextStyle(fontSize: 23, fontWeight: FontWeight.bold),
+                  child: Text(
+                    "Choose habits",
+                    style: TextStyle(fontSize: 23, fontWeight: FontWeight.bold),
+                  ),
                 ),
               ),
-            ),
 
 
-            Padding(
-              padding: const EdgeInsets.only(left: 14),
-              child: Align(
-                alignment: Alignment.centerLeft,
-                child: Text(
-                  "Change whenever neccessary",
-                  style: TextStyle(fontSize: 16),
+              Padding(
+                padding: const EdgeInsets.only(left: 14),
+                child: Align(
+                  alignment: Alignment.centerLeft,
+                  child: Text(
+                    "Change whenever neccessary",
+                    style: TextStyle(fontSize: 16),
+                  ),
                 ),
               ),
-            ),
 
-            SizedBox(height: 6),
+              SizedBox(height: 6),
 
-            Expanded( // 👈 This is the fix!
-              child: Cards(
-                emojiList: ["💧", "🏃‍♂️", "📚", "🧘‍♀️", "📖", "📓", "🌱", "😴"],
-                cardText: ["Drink water", "Run","Read Books","Meditate","Study","Journal","Plantation","Sleep"],
+              Expanded( // 👈 This is the fix!
+                child: InkWell(
+                  onTap: () {  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => const Screen1()),
+                  );
+                  },
+                  child: Cards(
+                    emojiList: ["💧", "🏃‍♂️", "📚", "🧘‍♀️", "📖", "📓", "🌱", "😴"],
+                    cardText: ["Drink water", "Run","Read Books","Meditate","Study","Journal","Plantation","Sleep"],
+                  ),
+                ),
               ),
-            ),
-          ],
+            ],
+          ),
+      ],
         ),
 
       ),

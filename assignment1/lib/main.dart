@@ -5,6 +5,7 @@ import 'package:flutter/material.dart';
 import 'onboarding/MyHome.dart';
 import 'package:google_fonts/google_fonts.dart';
 
+
 //import 'package:flutter/rendering.dart';
 import 'package:flutter/material.dart';
 import 'onboarding/custom_avatar_curve.dart';
@@ -17,9 +18,14 @@ import "Main_app/HomeBar.dart";
 import "Main_app/Screen1.dart";
 import 'Main_app/HabChal.dart';
 import 'Main_app/Screen2.dart';
+import 'Main_app/NavBar.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
+
 void main() {
   //debugPaintSizeEnabled = true;
-  runApp(const MyApp());
+  runApp( ProviderScope(
+    child: MyApp(),
+  ),);
 }
 
 class MyApp extends StatelessWidget {
@@ -53,8 +59,9 @@ class MyApp extends StatelessWidget {
         ),
       ),
       debugShowCheckedModeBanner: false,
-    //  home: MyHomePage(title: "Habits"),
-home: Screen2(),
+      home: MyHomePage(title: "Habits"),
+
+
 
     );
   }

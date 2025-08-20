@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import '../onboarding/CustomList.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:material_design_icons_flutter/material_design_icons_flutter.dart';
-
+import 'NavBar.dart';
 class Screen2 extends StatefulWidget {
   const Screen2({super.key});
 
@@ -22,6 +22,7 @@ class _Screen2State extends State<Screen2> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+     //////////////// bottomNavigationBar: Navbar(),
       body: SingleChildScrollView(
         child: Padding(
           padding: const EdgeInsets.only(top: 16, left: 16, right: 16),
@@ -46,7 +47,9 @@ class _Screen2State extends State<Screen2> {
                         minimumSize: Size(48, 48),
         
                       ),
-                      onPressed: () {},
+                      onPressed: () {
+                        Navigator.pop(context);
+                      },
                       child: Icon(Icons.arrow_back_ios_new_outlined)),
                   //button 2
                   OutlinedButton(

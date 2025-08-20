@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import '../onboarding/CustomList.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:material_design_icons_flutter/material_design_icons_flutter.dart';
+import 'package:flutter_slidable/flutter_slidable.dart';
+
 class Habchal extends StatefulWidget {
   const Habchal({super.key});
 
@@ -64,27 +66,147 @@ class _HabchalState extends State<Habchal> {
           ),
           // TILE 1: Original UI (plus icon, 2 avatars +3)
 
-          CustomComplexListItem(
-                    progressPercent: 0.25,
-                    leadingIcon: FontAwesomeIcons.droplet,
-                    title: "Drink the water",
-                    subtitle: "500/2000 ML",
-                    imageUrls: const [
-                      'https://images.unsplash.com/photo-1667857481427-382ee0b5207e?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1yZWxhdGVkfDN8fHxlbnwwfHx8fHw%3D',
-                      'https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
-                    ],
-                    additionalUsersCount: 3,
-                    trailingIcon: Icons.add,
-                    // Plus icon
-                    onTrailingButtonPressed: () {
-                      print("Drink water item - Add button tapped!");
-                    },
+          Container(
+            margin: const EdgeInsets.symmetric(horizontal: 7.0),
+            child: Slidable(
+
+            startActionPane: ActionPane(
+              motion: ScrollMotion(),
+              children: [
+                SlidableAction(
+                  onPressed: (context)=> print("Drink water item - Add button tapped!"),
+                  backgroundColor: Colors.white38,
+                  foregroundColor: Colors.blue,
+                  borderRadius: BorderRadius.circular(10),
+                  padding: EdgeInsets.all(0 ),
+                  spacing: 1,
+                  icon: Icons.remove_red_eye,
+                  label: 'View',
+                ),
+                SlidableAction(
+                  onPressed: (context)=> print("Drink water item - Add button tapped!"),
+                  backgroundColor: Colors.white38,
+                  foregroundColor: Colors.green,
+                  borderRadius: BorderRadius.circular(10),
+                  padding: EdgeInsets.all(0 ),
+                  spacing: 1,
+                  icon: Icons.done,
+                  label: 'Done',
+                ),
+
+              ]
+
+            ),
+              // oppsoite slide
+              endActionPane: ActionPane(
+                  motion: ScrollMotion(),
+                  children: [
+                    SlidableAction(
+                        onPressed: (context)=> print("Drink water item - Add button tapped!"),
+                    backgroundColor: Colors.white38,
+                      foregroundColor: Colors.red,
+                      borderRadius: BorderRadius.circular(10),
+                      padding: EdgeInsets.all(0 ),
+                      spacing: 1,
+                    icon: Icons.close,
+                    label: 'Fail',
+
+                    ),
+                    SlidableAction(
+                      onPressed: (context)=> print("Drink water item - Add button tapped!"),
+                      backgroundColor: Colors.white38,
+                      foregroundColor: Colors.black,
+                      borderRadius: BorderRadius.circular(10),
+                      padding: EdgeInsets.all(0 ),
+                      spacing: 1,
+                      icon: Icons.navigate_next,
+                      label: 'Skip',
+
+                    )
+
+                  ]),
+              child: CustomComplexListItem(
+                        progressPercent: 0.25,
+                        leadingIcon: FontAwesomeIcons.droplet,
+                        title: "Drink the water",
+                        subtitle: "500/2000 ML",
+                        imageUrls: const [
+                          'https://images.unsplash.com/photo-1667857481427-382ee0b5207e?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1yZWxhdGVkfDN8fHxlbnwwfHx8fHw%3D',
+                          'https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+                        ],
+                        additionalUsersCount: 3,
+                        trailingIcon: Icons.add,
+                        // Plus icon
+                        onTrailingButtonPressed: () {
+                          print("Drink water item - Add button tapped!");
+                        },
+              ),
+            ),
           ),
 
           SizedBox(height: 20),
           // Spacing between items
           // Example 2: New UI (tick icon, 2 avatars, no +X badge)
-          CustomComplexListItem(
+    Container(
+    padding: const EdgeInsets.symmetric(horizontal: 7.0),
+    child: Slidable(
+
+    startActionPane: ActionPane(
+    motion: ScrollMotion(),
+    children: [
+    SlidableAction(
+    onPressed: (context)=> print("Drink water item - Add button tapped!"),
+    backgroundColor: Colors.white38,
+    foregroundColor: Colors.blue,
+    borderRadius: BorderRadius.circular(10),
+    padding: EdgeInsets.all(0 ),
+    spacing: 1,
+    icon: Icons.remove_red_eye,
+    label: 'View',
+    ),
+    SlidableAction(
+    onPressed: (context)=> print("Drink water item - Add button tapped!"),
+    backgroundColor: Colors.white38,
+    foregroundColor: Colors.green,
+    borderRadius: BorderRadius.circular(10),
+    padding: EdgeInsets.all(0 ),
+    spacing: 1,
+    icon: Icons.done,
+    label: 'Done',
+    ),
+
+    ]
+
+    ),
+    // oppsoite slide
+    endActionPane: ActionPane(
+    motion: ScrollMotion(),
+    children: [
+    SlidableAction(
+    onPressed: (context)=> print("Drink water item - Add button tapped!"),
+    backgroundColor: Colors.white38,
+    foregroundColor: Colors.red,
+    borderRadius: BorderRadius.circular(10),
+    padding: EdgeInsets.all(0 ),
+    spacing: 1,
+    icon: Icons.close,
+    label: 'Fail',
+
+    ),
+    SlidableAction(
+    onPressed: (context)=> print("Drink water item - Add button tapped!"),
+    backgroundColor: Colors.white38,
+    foregroundColor: Colors.black,
+    borderRadius: BorderRadius.circular(10),
+    padding: EdgeInsets.all(0 ),
+    spacing: 1,
+    icon: Icons.navigate_next,
+    label: 'Skip',
+
+    )
+
+    ]),
+    child: CustomComplexListItem(
                     progressPercent: 0.80,
                     // Different progress
                     leadingIcon: FontAwesomeIcons.personWalking,
@@ -104,11 +226,72 @@ class _HabchalState extends State<Habchal> {
                       print("Daily run item - Tick button tapped!");
                     },
           ),
+    )
+    ),
 
           SizedBox(height: 20),
           // Spacing
           // third tile
-          CustomComplexListItem(
+    Container(
+    padding: const EdgeInsets.symmetric(horizontal: 7.0),
+    child: Slidable(
+
+    startActionPane: ActionPane(
+    motion: ScrollMotion(),
+    children: [
+    SlidableAction(
+    onPressed: (context)=> print("Drink water item - Add button tapped!"),
+    backgroundColor: Colors.white38,
+    foregroundColor: Colors.blue,
+    borderRadius: BorderRadius.circular(10),
+    padding: EdgeInsets.all(0 ),
+    spacing: 1,
+    icon: Icons.remove_red_eye,
+    label: 'View',
+    ),
+    SlidableAction(
+    onPressed: (context)=> print("Drink water item - Add button tapped!"),
+    backgroundColor: Colors.white38,
+    foregroundColor: Colors.green,
+    borderRadius: BorderRadius.circular(10),
+    padding: EdgeInsets.all(0 ),
+    spacing: 1,
+    icon: Icons.done,
+    label: 'Done',
+    ),
+
+    ]
+
+    ),
+    // oppsoite slide
+    endActionPane: ActionPane(
+    motion: ScrollMotion(),
+    children: [
+    SlidableAction(
+    onPressed: (context)=> print("Drink water item - Add button tapped!"),
+    backgroundColor: Colors.white38,
+    foregroundColor: Colors.red,
+    borderRadius: BorderRadius.circular(10),
+    padding: EdgeInsets.all(0 ),
+    spacing: 1,
+    icon: Icons.close,
+    label: 'Fail',
+
+    ),
+    SlidableAction(
+    onPressed: (context)=> print("Drink water item - Add button tapped!"),
+    backgroundColor: Colors.white38,
+    foregroundColor: Colors.black,
+    borderRadius: BorderRadius.circular(10),
+    padding: EdgeInsets.all(0 ),
+    spacing: 1,
+    icon: Icons.navigate_next,
+    label: 'Skip',
+
+    )
+
+    ]),
+        child:   CustomComplexListItem(
                     progressPercent: 0.50,
                     leadingIcon: MdiIcons.meditation,
 
@@ -125,7 +308,8 @@ class _HabchalState extends State<Habchal> {
                       print("Read chapter item - Arrow button tapped!");
                     },
           )
-      
+    )
+    ),
         ],
       ),
     );

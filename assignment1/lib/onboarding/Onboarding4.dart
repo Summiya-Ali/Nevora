@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'Apppbar.dart';
 import 'Onboarding3.dart'; // 👈 import these two
 import '../Create_account/Create1.dart';
-
+import 'RingsBackground.dart';
 class Onboarding4 extends StatefulWidget {
   const Onboarding4({super.key});
 
@@ -24,30 +24,18 @@ class _Onboarding4State extends State<Onboarding4> {
   @override
   Widget build(BuildContext context) {
     return SafeArea(
-      child: GestureDetector(
-        onHorizontalDragEnd: (details) {
-          if (details.primaryVelocity != null) {
-            if (details.primaryVelocity! > 0) {
-              // Swipe Right → Go back to Onboarding3
-              Navigator.push(
-                context,
-                MaterialPageRoute(builder: (context) => const Onboarding3()),
-              );
-            } else if (details.primaryVelocity! < 0) {
-              // Swipe Left → Go forward to Create1
-              Navigator.push(
-                context,
-                MaterialPageRoute(builder: (context) => const Create1()),
-              );
-            }
-          }
-        },
-        child: Scaffold(
+
+      child:
+
+        Scaffold(
           appBar: CustomAppBar(
             title: "Create Account",
             onBack: () => Navigator.pop(context),
           ),
-          body: Padding(
+          body: Stack(
+            children: [
+
+            const RingsBackground(),Padding(
             padding: const EdgeInsets.all(24.0),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
@@ -137,7 +125,15 @@ class _Onboarding4State extends State<Onboarding4> {
                 SizedBox(
                   width: double.infinity,
                   child: ElevatedButton(
-                    onPressed: () {},
+                    onPressed: (
+
+                        ) {
+                      // Swipe Left → Go forward to Create1
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => const Create1()),
+                      );
+                    },
                     style: ElevatedButton.styleFrom(
                       padding: const EdgeInsets.symmetric(vertical: 16),
                       shape: RoundedRectangleBorder(
@@ -153,7 +149,9 @@ class _Onboarding4State extends State<Onboarding4> {
               ],
             ),
           ),
+            ],
         ),
+
       ),
     );
   }
